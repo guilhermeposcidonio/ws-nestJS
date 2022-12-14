@@ -19,6 +19,9 @@ nest g controller jogadores
 start o projeto
 npm run start:dev
 
+criando service
+nest g service jogadores
+
 OBS. quando der esse erro 
 Delete `cr`eslint(prettier/prettier)
 
