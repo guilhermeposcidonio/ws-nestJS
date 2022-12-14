@@ -1,0 +1,34 @@
+--------------------------- NEST/node ---------------------------
+
+node -v
+
+instalar no cmd 
+npm i -g @nestjs/cli
+
+nest -v
+
+iniciando uma aplicação padrao no nest 
+nest new api-smartranking
+
+criar modulos 
+nest g module jogadores
+
+criando controllers
+nest g controller jogadores
+
+start o projeto
+npm run start:dev
+
+OBS. quando der esse erro 
+Delete `cr`eslint(prettier/prettier)
+
+adicionar essa regra no .eslintrc.js
+
+     "rules": {
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ]
+
+  }
+
+dto - data transfere object
