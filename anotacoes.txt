@@ -22,6 +22,9 @@ npm run start:dev
 criando service
 nest g service jogadores
 
+importando o uuid
+npm install uuid
+
 OBS. quando der esse erro 
 Delete `cr`eslint(prettier/prettier)
 
