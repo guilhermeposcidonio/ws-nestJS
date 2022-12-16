@@ -10,8 +10,16 @@ export class JogadoresService {
   private readonly logger = new Logger(JogadoresService.name);
 
   async criarAtualizarJogador(criarJogadorDto: CriarJogadorDto) {
-    this.logger.log(`criaJogadorDto: ${criarJogadorDto}`);
-    this.criar(criarJogadorDto);
+    const { email } = criarJogadorDto;
+    const jogadorEncontrado = await this.jogadores.find(
+      (jogador) => jogador.email === email,
+    );
+
+    if (jogadorEncontrado) {
+      await this.atualizar(jogadorEncontrado, criarJogadorDto);
+    } else {
+      await this.criar(criarJogadorDto);
+    }
   }
 
   async consultarTodosJogadores(): Promise<Jogador[]> {
@@ -31,5 +39,13 @@ export class JogadoresService {
       urlFotoJogador: 'www.google.com.br/foto123.jpg',
     };
     this.jogadores.push(jogador);
+  }
+
+  private atualizar(
+    jogadorEncontrado: Jogador,
+    criaJogadorDto: CriarJogadorDto,
+  ): void {
+    const { nome } = criaJogadorDto;
+    jogadorEncontrado.nome = nome;
   }
 }
