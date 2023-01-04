@@ -38,3 +38,11 @@ adicionar essa regra no .eslintrc.js
   }
 
 dto - data transfere object
+
+#erro babel__core
+npm i --save-dev @types/babel__core
+
+#Mongo
+npm i @nestjs/mongoose
+#depreciada
+npm install --save-dev @types/monogoose
