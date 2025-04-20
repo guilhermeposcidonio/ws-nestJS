@@ -1,18 +1,21 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
+import { CategoriasModule } from './categorias/categorias.module';
+import { DesafiosModule } from './desafios/desafios.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb+srv://root:<Cd0mpZ4cgjMGEPIH>@cluster0.eplfdfx.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://admin:admin@cluster0.o69tfpf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false,
       },
     ),
     JogadoresModule,
+    CategoriasModule,
+    DesafiosModule,
   ],
 })
 export class AppModule {}
